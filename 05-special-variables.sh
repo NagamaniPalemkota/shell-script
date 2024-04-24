@@ -9,4 +9,5 @@ echo "Current home directory is: $HOME"
 echo "current user working on it is: $USER"
 echo "host name is : $HOSTNAME"
 echo "PRoceess id of this script is : $$"
+sleep 60&
 echo " Process id of last background command: $!"
