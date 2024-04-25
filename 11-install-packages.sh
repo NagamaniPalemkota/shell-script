@@ -5,7 +5,16 @@ TIMESTAMP=$(date +%F-%H-%M-%S)
 SCRIPTNAME=$(echo "$0" | cut -d "." -f1)
 LOGFILE=/tmp/$SCRIPTNAME-$TIMESTAMP.log
 
+VALIDATE(){
 
+    if [ $1 -ne 0 ]
+    then
+        echo "$2is failure"
+        exit 197
+    else
+        echo "$2 is success"
+    fi
+}
 
 if [ $USERID -ne 0 ]
 then
@@ -26,6 +35,9 @@ do
         echo -e "\e[32m $i Already installed..\e[33m skipping \e[0m"
         
     else
-        echo " $i Has to be installed"
+        echo " $i is installing"
+        dnf install $i -y &>> $LOGFILE
+        validate $? "installation of $i.."
+
     fi
 done
