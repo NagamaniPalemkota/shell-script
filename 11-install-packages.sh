@@ -9,7 +9,7 @@ VALIDATE(){
 
     if [ $1 -ne 0 ]
     then
-        echo "$2is failure"
+        echo "$2 is failure"
         exit 197
     else
         echo "$2 is success"
@@ -37,7 +37,7 @@ do
     else
         echo " $i is installing"
         dnf install $i -y &>> $LOGFILE
-        validate $? "installation of $i.."
+        VALIDATE $? "installation of $i.."
 
     fi
 done
