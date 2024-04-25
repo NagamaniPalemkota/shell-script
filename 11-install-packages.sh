@@ -23,8 +23,8 @@ do
 
     if [ $? -eq 0 ]
     then
-        echo "$i Already installed..skipping"
-        exit 197
+        echo -e "\e[32m $i Already installed..\e[33m skipping \e[0m"
+        
     else
         echo " $i Has to be installed"
     fi
