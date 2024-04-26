@@ -1,0 +1,3 @@
+#!/bin/bash/
+
+COURSE="Ansible"
