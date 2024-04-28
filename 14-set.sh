@@ -1,8 +1,13 @@
 #!/bin/bash
 
 set -e #used to handle errors by shell
-
+trap 'failure ${LINENO} ${BASH_COMMAND}' ERR
 USERID=$(id -u)
+
+failure()
+{
+    echo "Error occurs at $LINENO at $BASH_COMMAND"
+}
 
 if [ $USERID -ne 0 ]
 then
