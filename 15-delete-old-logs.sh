@@ -13,3 +13,15 @@ N="\e[0m"
         else
             echo -e "$R ${SOURCE_DIRECTORY} is not present $N"
     fi
+
+    FILES=$(find $SOURCE_DIRECTORY -name "-log" -mtime +14)
+
+    echo "Files to delete: $FILES"
+
+    while IFS=read -r line 
+    do
+
+    echo "Deleting $line"
+    rm -rf $line
+
+    done <<<$FILES
