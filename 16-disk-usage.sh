@@ -15,3 +15,5 @@ while IFS= read -r line
         fi
     done <<< ${DISK_USAGE}
     echo -e "$MESSAGE"
+
+    echo "$MESSAGE" |mail -s "Disk_usage" nagamanitoglobal@gmail.com
