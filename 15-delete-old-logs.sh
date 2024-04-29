@@ -14,7 +14,7 @@ N="\e[0m"
             echo -e "$R ${SOURCE_DIRECTORY} is not present $N"
     fi
 
-    FILES=$(find $SOURCE_DIRECTORY -name "*-log" -mtime +14)
+    FILES=$(find $SOURCE_DIRECTORY -name "*.log" -mtime +14)
 
     echo "Files to delete: $FILES"
 
