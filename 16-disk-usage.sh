@@ -10,9 +10,8 @@ while IFS= read -r line
         FOLDER=$(echo $line|awk -F " " '{print $NF}')
         if [ $DISK_USED -ge $DISK_THRESHOLD ]
             then
-                MESSAGE+=" $FOLDER is more than the $DISK_THRESHOLD usage \n"
+                MESSAGE+=" \n $FOLDER is more than the $DISK_THRESHOLD usage "
                 
-            
         fi
     done <<< ${DISK_USAGE}
     echo "$MESSAGE"
