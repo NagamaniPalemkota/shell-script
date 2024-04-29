@@ -9,7 +9,7 @@ N="\e[0m"
 
     if [ -d ${SOURCE_DIRECTORY} ]
         then
-            echo -e "$G ${Source directory} is present $N"
+            echo -e "$G ${SOURCE_DIRECTORY} is present $N"
         else
-            echo -e "$R ${Source directory} is not present $N"
+            echo -e "$R ${SOURCE_DIRECTORY} is not present $N"
     fi
