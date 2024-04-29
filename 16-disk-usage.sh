@@ -11,7 +11,8 @@ while IFS= read -r line
         if [ $DISK_USED -ge $DISK_THRESHOLD ]
             then
                 MESSAGE+=" $FOLDER is more than the $DISK_THRESHOLD usage \n"
-                echo "$MESSAGE"
+                
             
         fi
     done <<< ${DISK_USAGE}
+    echo "$MESSAGE"
