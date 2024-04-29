@@ -24,4 +24,4 @@ N="\e[0m"
     echo "Deleting $line"
     rm -rf $line
 
-    done <<<$FILES
+    done <<< $FILES
