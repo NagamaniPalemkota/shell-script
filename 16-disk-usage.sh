@@ -5,8 +5,8 @@ DISK_THRESHOLD=50
 
 while IFS= read -r line
     do 
-        DISK_USED=$(echo $line|awk -F " " 'print {6F}'| cut -d "%" -f1)
-        FOLDER=$(echo $line|awk -F " " 'print {NF}')
+        DISK_USED=$(echo $line|awk -F " " '{print $6F}'| cut -d "%" -f1)
+        FOLDER=$(echo $line|awk -F " " '{print $NF}')
         if [ $DISK_USED -ge $DISK_THRESHOLD ]
             then
                 echo " $FOLDER is more than the $DISK_THRESHOLD usage"
