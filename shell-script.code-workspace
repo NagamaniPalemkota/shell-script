@@ -8,6 +8,9 @@
 		},
 		{
 			"path": "../expense-shell-1"
+		},
+		{
+			"path": "../ansible"
 		}
 	],
 	"settings": {}
